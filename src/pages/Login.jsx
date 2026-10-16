@@ -1,10 +1,74 @@
 import { Link } from "react-router-dom";
+import Logo from "../components/Logo";
+import SocialSignin from "../components/SocialSignin";
 
 const Login = () => {
   return (
-    <div>
-        <p>Hello, world</p>
-        <Link to="/">Go home</Link>
+    <div className="pt-32 sm:pt-56 pb-10 px-4 bg-grey dark:bg-darkmode">
+      <div className="container mx-auto max-w-lg overflow-hidden rounded-lg bg-white dark:bg-darklight text-center px-8 py-14 sm:px-12 md:px-16">
+        <div>
+          <div className="mb-10 text-center mx-auto inline-block">
+            <Logo />
+          </div>
+
+          <SocialSignin />
+          <span className="z-1 relative my-8 block text-center">
+            <span className="-z-1 absolute left-0 top-1/2 block h-px w-full bg-dark_border">
+              {" "}
+            </span>
+            <span className="text-muted dark:text-white/60 relative z-10 inline-block ng-white px-3 text-base dark:bg-darklight">
+              OR
+            </span>
+          </span>
+
+          <form>
+            <div className="mb-[22px]">
+              <input
+                type="email"
+                placeholder="Email"
+                className="w-full rounded-md border placeholder:text-grey-400 border-border dark_border border-solid 
+                bg-transparent px-5 py-3 text-base outline-hidden transition focus:border-primary 
+                focus-visible:shadow-none dark:border-border_color dark:text-white dark:focus:border-primary"
+              />
+            </div>
+
+            <div className="mb-[22px]">
+              <input
+                type="password"
+                placeholder="Password"
+                className="w-full rounded-md border placeholder:text-grey-400 border-border dark_border border-solid 
+                bg-transparent px-5 py-3 text-base outline-hidden transition focus:border-primary 
+                focus-visible:shadow-none dark:border-border_color dark:text-white dark:focus:border-primary"
+              />
+            </div>
+
+            <div className="mb-9">
+              <button
+                type="submit"
+                className="flex w-full cursor-pointer items-center justify-center rounded-md border border-primary bg-primary hover:bg-primary/75 dark:hover:bg-primary! px-5 py-3 text-white font-medium transition transition-300 ease-in-out"
+              >
+                Sign In
+              </button>
+            </div>
+          </form>
+
+          <div className="flex flex-col items-center justify-center">
+            <Link
+              to="#"
+              className="mb-2 inline-block text-base text-dark hover:text-primary dark:hover:text-primary"
+            >
+              Forgot Password?
+            </Link>
+            <p className="text-body-secondary text-base">
+              Not a member yet?{" "}
+              <link
+                to="/signUp"
+                className="text-dark dark:text-white hover:text-primary dark:hover:text-primary"
+              ></link>
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
