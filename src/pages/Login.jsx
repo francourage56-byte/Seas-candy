@@ -61,10 +61,12 @@ const Login = () => {
             </Link>
             <p className="text-body-secondary text-base">
               Not a member yet?{" "}
-              <link
-                to="/signUp"
+              <Link
+                to="/signup"
                 className="text-dark dark:text-white hover:text-primary dark:hover:text-primary"
-              ></link>
+              >
+                Register
+              </Link>
             </p>
           </div>
         </div>
