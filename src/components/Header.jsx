@@ -27,6 +27,9 @@ const Header = () => {
             <HeaderLink key={index} item={item} />
           ))}
         </ul>
+        <div className="flex items-center gap-4">
+          <button className="flex items-center justify-center text-body-color duration-300 hover:cursor-pointer hover:text-primary dark:text-white bg-white rounded-lg p-2 outline-none"></button>
+        </div>
       </div>
     </header>
   );
