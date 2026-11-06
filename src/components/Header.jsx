@@ -1,10 +1,11 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Logo from "./Logo";
 import { headerData } from "../constants/menuData";
 import HeaderLink from "./HeaderLink";
 import { Icon } from "@iconify/react";
 import { useTheme } from "next-themes";
 import { Link } from "react-router-dom";
+import MobileHeaderLink from "./MobileHeaderLink";
 
 const Header = () => {
   const [sticky, setSticky] = useState(false);
@@ -21,7 +22,30 @@ const Header = () => {
     setSticky(window.scrollY >= 80);
   };
 
-  const handleclickOutside = event;
+  const handleclickOutside = (event) => {
+    if (signInRef.current && !signInRef.current.contains(event.target)) {
+      setisSignInOpen(false);
+    }
+    if (signUpRef.current && !signUpRef.current.contains(event.target)) {
+      setisSignUpOpen(false);
+    }
+    if (
+      mobileMenuRef.current &&
+      !mobileMenuRef.current.contains(event.target) &&
+      navbarOpen
+    ) {
+      setNavbarOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    document.addEventListener("mousedown", handleclickOutside);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      document.removeEventListener("mousedown", handleclickOutside);
+    };
+  });
 
   return (
     <header
@@ -117,6 +141,12 @@ const Header = () => {
             </svg>
           </button>
         </div>
+
+        <nav className="flex flex-col items-start p-4">
+          {headerData.map((item, index) => (
+            <MobileHeaderLink key={index} item={item} />
+          ))}
+        </nav>
       </div>
     </header>
   );
