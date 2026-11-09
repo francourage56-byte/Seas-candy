@@ -10,7 +10,7 @@ import MobileHeaderLink from "./MobileHeaderLink";
 const Header = () => {
   const [sticky, setSticky] = useState(false);
   const { theme, setTheme } = useTheme();
-  const [navbarOpen, setNavbarOpen] = useState(true);
+  const [navbarOpen, setNavbarOpen] = useState(false);
   const [isSignInOpen, setisSignInOpen] = useState(false);
   const [isSignUpOpen, setisSignUpOpen] = useState(false);
   const navbarRef = useRef();
