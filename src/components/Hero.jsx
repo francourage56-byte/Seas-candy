@@ -47,18 +47,18 @@ const Hero = () => {
                 Browser our services
               </Link>
             </motion.div>
-            <dev className="lg:col-span-6 col-span-12 sm:bg-none bg-[url('/hero/right-background.svg')] px-4">
-              <motion.div {...rightAmination}>
-                <img
-                 src="/hero/right-image.png" 
-                 alt="hero message"
-                 width={700} 
-                 height={700}
-                 className="w-full h-full"
-                 />
+          </div>
 
-              </motion.div>
-            </dev>
+          <div className="lg:col-span-6 col-span-12 sm:bg-none bg-[url('/hero/right-background.svg')] px-4">
+            <motion.div {...rightAmination}>
+              <img
+                src="/hero/right-image.png"
+                alt="hero message"
+                width={700}
+                height={700}
+                className="w-full h-full"
+              />
+            </motion.div>
           </div>
         </div>
       </div>
